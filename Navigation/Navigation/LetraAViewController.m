@@ -7,7 +7,7 @@
 //
 
 #import "LetraAViewController.h"
-#import "LetraBViewController.h"
+
 
 @implementation LetraAViewController
 
@@ -15,10 +15,18 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    self.title = @"A";
+    dicionario= [[Dicionario alloc] init];
+    self.title = [dicionario.alfabeto rodar];
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
+    
+    
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]
+                             initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem=back;
+    
+    
     
     UIButton *botao = [UIButton
                                         buttonWithType:UIButtonTypeSystem];
@@ -30,15 +38,19 @@
     
     [self.view addSubview:botao];
     
+
+    
+
+
  
 }
 
 -(void)next:(id)sender {
-    LetraBViewController *proximo = [[LetraBViewController alloc]
-                                              initWithNibName:nil
-                                            bundle:NULL];
-    [self.navigationController pushViewController:proximo
-                                         animated:YES];
+        self.title = [dicionario.alfabeto rodar];
+}
+
+-(void)back:(id)sender {
+    self.title = [dicionario.alfabeto back];
     
 }
 

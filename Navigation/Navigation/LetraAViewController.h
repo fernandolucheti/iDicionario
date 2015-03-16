@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Dicionario.h"
 
-@interface LetraAViewController : UIViewController
+@interface LetraAViewController : UIViewController{
+    Dicionario* dicionario;
+}
 
 @end
