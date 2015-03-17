@@ -25,10 +25,17 @@
     CGFloat height = 44;
     
     foto = [UIImage imageNamed:@"blueHx.jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:[[dicionario.alfabeto ler] lowercaseString] ofType:@"jpg"];
+    fotoLetra = [UIImage imageWithContentsOfFile:path];
     imgView = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX, posicaoY, width, height)];
+    
+    imgViewLetra = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX+150, posicaoY, width, height)];
     imgView.image = foto;
+    imgViewLetra.image = fotoLetra;
     [self.view addSubview:imgView];
+    [self.view addSubview:imgViewLetra];
     imgView.alpha = 0;
+    imgViewLetra.alpha = 0;
     
     
     letra = [[UILabel alloc] initWithFrame:CGRectMake(posicaoX+80, posicaoY, width, height)];
@@ -63,10 +70,10 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!flag) {
-        imgView.transform = CGAffineTransformMakeScale(2.0, 2.0);
+        imgViewLetra.transform = CGAffineTransformMakeScale(2.0, 2.0);
         flag = true;
     }else{
-        imgView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        imgViewLetra.transform = CGAffineTransformMakeScale(1.0, 1.0);
         flag = false;
     }
 
@@ -76,18 +83,24 @@
 -(void) animate{
     letra.alpha = 0;
     imgView.alpha = 0;
+    imgViewLetra.alpha = 0;
     letra.transform = CGAffineTransformMakeTranslation(+20, 0);
     [UIView animateWithDuration: 1.0 animations:^{
         imgView.alpha = 1;
+        imgViewLetra.alpha = 1;
         letra.alpha = 1;
         letra.transform = CGAffineTransformMakeTranslation(-70, 0);
     }];
 }
 
+
 -(void)next:(id)sender {
-        NSString *x = [dicionario.alfabeto rodar];
+    NSString *x = [dicionario.alfabeto rodar];
     self.title = x;
     letra.text = x;
+    NSString *path = [[NSBundle mainBundle] pathForResource:[x lowercaseString] ofType:@"jpg"];
+    fotoLetra = [UIImage imageWithContentsOfFile:path];
+    imgViewLetra.image = fotoLetra;
     [botao setTitle:[dicionario randomStringWithLength:x] forState:UIControlStateNormal];
     [botao sizeToFit];
     [self animate];
@@ -97,6 +110,9 @@
     NSString *x = [dicionario.alfabeto back];
     self.title = x;
     letra.text = x;
+    NSString *path = [[NSBundle mainBundle] pathForResource: [x lowercaseString] ofType:@"jpg"];
+    fotoLetra = [UIImage imageWithContentsOfFile:path];
+    imgViewLetra.image = fotoLetra;
     [botao setTitle:[dicionario randomStringWithLength:x] forState:UIControlStateNormal];
     [botao sizeToFit];
     [self animate];

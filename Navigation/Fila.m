@@ -44,7 +44,7 @@
     return x2;
 }
 
--(NSObject *) ler{
+-(NSString *) ler{
     if (! [self vazio]){
       return self.elementos.firstObject;
     }else{

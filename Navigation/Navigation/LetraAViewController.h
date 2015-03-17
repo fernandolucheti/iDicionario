@@ -14,7 +14,9 @@
     UIButton *botao;
     UILabel *letra;
     UIImage *foto;
+    UIImage *fotoLetra;
     UIImageView *imgView;
+    UIImageView *imgViewLetra;
     BOOL flag;
 }
 

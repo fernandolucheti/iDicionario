@@ -15,7 +15,7 @@
 
 -(void) enfileirar:(NSObject *)elem;
 -(void) desenfileirar;
--(NSObject *) ler;
+-(NSString *) ler;
 -(NSObject *) rodar;
 -(NSObject *) back;
 -(BOOL) vazio;
