@@ -24,16 +24,25 @@
     CGFloat width =  44;
     CGFloat height = 44;
     
-    letra = [[UILabel alloc] initWithFrame:CGRectMake(posicaoX, posicaoY, width, height)];
+    foto = [UIImage imageNamed:@"blueHx.jpg"];
+    imgView = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX, posicaoY, width, height)];
+    imgView.image = foto;
+    [self.view addSubview:imgView];
+    imgView.alpha = 0;
+    
+    
+    
+    
+    
+    
+    letra = [[UILabel alloc] initWithFrame:CGRectMake(posicaoX+80, posicaoY, width, height)];
     letra.text = [dicionario.alfabeto ler];
     UIFont *font = letra.font;
     letra.font = [font fontWithSize:36];
+    letra.alpha = 0;
+    letra.textColor = [UIColor whiteColor];
     [self.view addSubview:letra];
     
-    foto = [UIImage imageNamed:@"smile"];
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX+50, posicaoY, width, height)];
-    imgView.image = foto;
-    [self.view addSubview:imgView];
     
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
@@ -44,7 +53,7 @@
                              initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem=back;
     
-    
+    [self animate];
     
     botao = [UIButton buttonWithType:UIButtonTypeSystem];
     [botao setTitle:[dicionario randomStringWithLength:[dicionario.alfabeto rodar]] forState:UIControlStateNormal];
@@ -54,12 +63,24 @@
  
 }
 
+-(void) animate{
+    letra.alpha = 0;
+    imgView.alpha = 0;
+    letra.transform = CGAffineTransformMakeTranslation(+20, 0);
+    [UIView animateWithDuration: 1.0 animations:^{
+        imgView.alpha = 1;
+        letra.alpha = 1;
+        letra.transform = CGAffineTransformMakeTranslation(-70, 0);
+    }];
+}
+
 -(void)next:(id)sender {
         NSString *x = [dicionario.alfabeto rodar];
     self.title = x;
     letra.text = x;
     [botao setTitle:[dicionario randomStringWithLength:x] forState:UIControlStateNormal];
     [botao sizeToFit];
+    [self animate];
 }
 
 -(void)back:(id)sender {
@@ -68,6 +89,8 @@
     letra.text = x;
     [botao setTitle:[dicionario randomStringWithLength:x] forState:UIControlStateNormal];
     [botao sizeToFit];
+    [self animate];
+    
 }
 
 

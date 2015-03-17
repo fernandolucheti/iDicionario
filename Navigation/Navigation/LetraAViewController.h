@@ -14,6 +14,7 @@
     UIButton *botao;
     UILabel *letra;
     UIImage *foto;
+    UIImageView *imgView;
 }
 
 @end
