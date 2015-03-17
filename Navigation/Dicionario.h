@@ -15,6 +15,6 @@
 
 -(void) preencherAlfabeto;
 
-
+-(NSString *) randomStringWithLength: (NSString*) initial;
 
 @end

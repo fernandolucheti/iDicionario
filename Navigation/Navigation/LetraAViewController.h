@@ -11,6 +11,9 @@
 
 @interface LetraAViewController : UIViewController{
     Dicionario* dicionario;
+    UIButton *botao;
+    UILabel *letra;
+    UIImage *foto;
 }
 
 @end
