@@ -17,7 +17,7 @@
     [super viewDidLoad];
     dicionario= [[Dicionario alloc] init];
     self.title = [dicionario.alfabeto ler];
-    
+    flag = false;
     
     CGFloat posicaoY = 100;
     CGFloat posicaoX = 20;
@@ -29,10 +29,6 @@
     imgView.image = foto;
     [self.view addSubview:imgView];
     imgView.alpha = 0;
-    
-    
-    
-    
     
     
     letra = [[UILabel alloc] initWithFrame:CGRectMake(posicaoX+80, posicaoY, width, height)];
@@ -61,6 +57,20 @@
     botao.center = self.view.center;
     [self.view addSubview:botao];
  
+}
+
+
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (!flag) {
+        imgView.transform = CGAffineTransformMakeScale(2.0, 2.0);
+        flag = true;
+    }else{
+        imgView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        flag = false;
+    }
+
+
 }
 
 -(void) animate{

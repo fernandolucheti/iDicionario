@@ -15,6 +15,7 @@
     UILabel *letra;
     UIImage *foto;
     UIImageView *imgView;
+    BOOL flag;
 }
 
 @end
