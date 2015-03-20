@@ -8,6 +8,7 @@
 
 #import "MackenzieAppDelegate.h"
 #import "LetraAViewController.h"
+#import "TableViewController.h"
 
 @implementation MackenzieAppDelegate
 
@@ -16,13 +17,19 @@
     LetraAViewController *viewController = [[LetraAViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
+    TableViewController *tableView = [[TableViewController alloc] init];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController: viewController];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[self.navigationController, tableView];
+//    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Navegação"];
+//    [[self.tabBarController.tabBar.items objectAtIndex:1] setTitle:@"Detalhes"];
     
-    
-    self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
+
+
+    self.window.rootViewController = self.tabBarController;
+
 
 
     

@@ -7,6 +7,7 @@
 //
 
 #import "LetraAViewController.h"
+#import "TableViewController.h"
 
 
 @implementation LetraAViewController
@@ -15,27 +16,33 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    dicionario= [[Dicionario alloc] init];
+    dicionario= [Dicionario getInstance];
     self.title = [dicionario.alfabeto ler];
     flag = false;
-    
+    TableViewController *tableView = [[TableViewController alloc] init];
+    self.tabBarController.viewControllers = @[self.navigationController, tableView];
+    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Navegação"];
+    [[self.tabBarController.tabBar.items objectAtIndex:1] setTitle:@"Detalhes"];
     CGFloat posicaoY = 100;
     CGFloat posicaoX = 20;
     CGFloat width =  44;
     CGFloat height = 44;
-    
+    CGFloat center = self.view.center.x;
     foto = [UIImage imageNamed:@"blueHx.jpg"];
     NSString *path = [[NSBundle mainBundle] pathForResource:[[dicionario.alfabeto ler] lowercaseString] ofType:@"jpg"];
     fotoLetra = [UIImage imageWithContentsOfFile:path];
     imgView = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX, posicaoY, width, height)];
     
-    imgViewLetra = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX+150, posicaoY, width, height)];
+    imgViewLetra = [[UIImageView alloc] initWithFrame:CGRectMake(posicaoX+80, posicaoY, width, height)];
     imgView.image = foto;
     imgViewLetra.image = fotoLetra;
     [self.view addSubview:imgView];
     [self.view addSubview:imgViewLetra];
     imgView.alpha = 0;
     imgViewLetra.alpha = 0;
+    
+    
+    
     
     
     letra = [[UILabel alloc] initWithFrame:CGRectMake(posicaoX+80, posicaoY, width, height)];
@@ -63,9 +70,9 @@
     [botao sizeToFit];
     botao.center = self.view.center;
     [self.view addSubview:botao];
+
  
 }
-
 
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -85,7 +92,7 @@
     imgView.alpha = 0;
     imgViewLetra.alpha = 0;
     letra.transform = CGAffineTransformMakeTranslation(+20, 0);
-    [UIView animateWithDuration: 1.0 animations:^{
+    [UIView animateWithDuration: 2.0 animations:^{
         imgView.alpha = 1;
         imgViewLetra.alpha = 1;
         letra.alpha = 1;

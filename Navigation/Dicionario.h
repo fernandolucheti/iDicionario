@@ -13,6 +13,8 @@
 
 @property Fila* alfabeto;
 
++(id) getInstance;
+
 -(void) preencherAlfabeto;
 
 -(NSString *) randomStringWithLength: (NSString*) initial;

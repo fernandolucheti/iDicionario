@@ -10,12 +10,27 @@
 
 @implementation Dicionario
 
+static Dicionario *SINGLETON = nil;
+
+
+
++ (id)getInstance{
+    if (SINGLETON == nil){
+        SINGLETON = [[Dicionario alloc] init];
+    }
+    return SINGLETON;
+}
+
 -(id)init {
-    self = [super init];
+    if(SINGLETON){
+        return SINGLETON;
+    }
+
     self.alfabeto = [[Fila alloc] init];
     [self preencherAlfabeto];
     return self;
 }
+
 -(void) preencherAlfabeto{
     for (char a = 'A'; a <= 'Z'; a++)
     {

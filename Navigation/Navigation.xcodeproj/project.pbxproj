@@ -20,6 +20,10 @@
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* LetraAViewController.m */; };
+		8B29B25D1ABB071400B934CF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B25B1ABB071400B934CF /* TableViewController.m */; };
+		8B29B25E1ABB071400B934CF /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B29B25C1ABB071400B934CF /* TableViewController.xib */; };
+		8B67492F1ABB8EB0002638CD /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B67492D1ABB8EB0002638CD /* TableViewCell.m */; };
+		8B6749301ABB8EB0002638CD /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B67492E1ABB8EB0002638CD /* TableViewCell.xib */; };
 		8B70BD191AB7016600ED0669 /* Dicionario.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B70BD181AB7016600ED0669 /* Dicionario.m */; };
 		8B70BD1C1AB7027F00ED0669 /* Fila.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B70BD1B1AB7027F00ED0669 /* Fila.m */; };
 		8BB0C55E1AB8B91400E45E0D /* blueHx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0C55D1AB8B91400E45E0D /* blueHx.jpg */; };
@@ -79,6 +83,12 @@
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
 		27156F7B18BA89430053A99C /* LetraAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraAViewController.h; sourceTree = "<group>"; };
 		27156F7C18BA89430053A99C /* LetraAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraAViewController.m; sourceTree = "<group>"; };
+		8B29B25A1ABB071400B934CF /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8B29B25B1ABB071400B934CF /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8B29B25C1ABB071400B934CF /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		8B67492C1ABB8EB0002638CD /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		8B67492D1ABB8EB0002638CD /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		8B67492E1ABB8EB0002638CD /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8B70BD171AB7016600ED0669 /* Dicionario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dicionario.h; sourceTree = "<group>"; };
 		8B70BD181AB7016600ED0669 /* Dicionario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dicionario.m; sourceTree = "<group>"; };
 		8B70BD1A1AB7027F00ED0669 /* Fila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fila.h; sourceTree = "<group>"; };
@@ -176,6 +186,12 @@
 				27156F5318B76AF50053A99C /* Supporting Files */,
 				27156F7B18BA89430053A99C /* LetraAViewController.h */,
 				27156F7C18BA89430053A99C /* LetraAViewController.m */,
+				8B29B25A1ABB071400B934CF /* TableViewController.h */,
+				8B29B25B1ABB071400B934CF /* TableViewController.m */,
+				8B29B25C1ABB071400B934CF /* TableViewController.xib */,
+				8B67492C1ABB8EB0002638CD /* TableViewCell.h */,
+				8B67492D1ABB8EB0002638CD /* TableViewCell.m */,
+				8B67492E1ABB8EB0002638CD /* TableViewCell.xib */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB0C58B1AB8CAC000E45E0D /* t.jpg in Resources */,
+				8B6749301ABB8EB0002638CD /* TableViewCell.xib in Resources */,
 				8BB0C5881AB8CAC000E45E0D /* q.jpg in Resources */,
 				8BB0C5801AB8CAC000E45E0D /* h.jpg in Resources */,
 				8BB0C57E1AB8CAC000E45E0D /* f.jpg in Resources */,
@@ -339,6 +356,7 @@
 				8BB0C58C1AB8CAC000E45E0D /* u.jpg in Resources */,
 				8BB0C57D1AB8CAC000E45E0D /* e.jpg in Resources */,
 				8BB0C5871AB8CAC000E45E0D /* p.jpg in Resources */,
+				8B29B25E1ABB071400B934CF /* TableViewController.xib in Resources */,
 				8BB0C58F1AB8CAC000E45E0D /* x.jpg in Resources */,
 				8BB0C57A1AB8CAC000E45E0D /* b.jpg in Resources */,
 				8BB0C5811AB8CAC000E45E0D /* j.jpg in Resources */,
@@ -375,7 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B67492F1ABB8EB0002638CD /* TableViewCell.m in Sources */,
 				8B70BD191AB7016600ED0669 /* Dicionario.m in Sources */,
+				8B29B25D1ABB071400B934CF /* TableViewController.m in Sources */,
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
 				27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */,
 				8B70BD1C1AB7027F00ED0669 /* Fila.m in Sources */,
